@@ -48,5 +48,3 @@ def test_add_timestamp_in_seconds_as_raw_input(flat_df):
     # assert all true
     assert (seconds == df.index).all()
 
-
-

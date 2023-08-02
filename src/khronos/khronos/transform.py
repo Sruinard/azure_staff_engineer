@@ -35,14 +35,9 @@ def flatten_dataset(df: pd.DataFrame):
     date_and_ticker_index_df.index = date_and_ticker_index_df.index.droplevel(1)
     return date_and_ticker_index_df
 
-
-
-def to_multi_index_df(df: pd.DataFrame):
-    # add ticker as index level 0 and datetime as index level 1
-    date_and_ticker_index_df = df.set_index(['ticker'], append=True)
-    date_and_ticker_index_df.index = date_and_ticker_index_df.index.swaplevel()
-    date_and_ticker_index_df.sort_index(inplace=True)
-    return date_and_ticker_index_df
+def convert_index_to_datetime(df: pd.DataFrame):
+    df.index = pd.to_datetime(df.index)
+    return df
 
 def add_timestamp_in_seconds_as_raw_input(df: pd.DataFrame):
     # get index values
@@ -52,4 +47,12 @@ def add_timestamp_in_seconds_as_raw_input(df: pd.DataFrame):
     # add as input call 'timestamp_in_seconds'
     df['timestamp_in_seconds'] = timestamp_in_seconds
     return df
+
+
+def to_multi_index_df(df: pd.DataFrame):
+    # add ticker as index level 0 and datetime as index level 1
+    date_and_ticker_index_df = df.set_index(['ticker'], append=True)
+    date_and_ticker_index_df.index = date_and_ticker_index_df.index.swaplevel()
+    date_and_ticker_index_df.sort_index(inplace=True)
+    return date_and_ticker_index_df
 
