@@ -9,7 +9,11 @@ readme = "README.md"
 python = "^3.9"
 dvc = "^3.10.1"
 dvc-azure = "^2.22.0"
+pandas = "^2.0.3"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
 
 [build-system]
 requires = ["poetry-core"]
