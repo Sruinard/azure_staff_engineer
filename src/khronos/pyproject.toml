@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 dvc = "^3.10.1"
+dvc-azure = "^2.22.0"
 
 
 [build-system]

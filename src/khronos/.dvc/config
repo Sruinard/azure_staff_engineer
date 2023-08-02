@@ -2,5 +2,5 @@
     remote = artifactstore
     autostage = true
 ['remote "artifactstore"']
-    url = azure://csumlopsartifactstorage.blob.core.windows.net/artifacts
-    version_aware = true
+    url = azure://artifacts/
+    account_name = csumlopsartifactstorage
