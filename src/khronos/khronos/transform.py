@@ -56,3 +56,4 @@ def to_multi_index_df(df: pd.DataFrame):
     date_and_ticker_index_df.sort_index(inplace=True)
     return date_and_ticker_index_df
 
+
